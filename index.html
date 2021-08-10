@@ -2,8 +2,8 @@
 <!doctype html>
 <html lang="en">
     <head>
-    <meta charset="utf-8">
-    <title>Chungon's Resume</title>
+    <meta charset="utf-8" name="Chungon's Resume" content="TCO's self-introduction, profile, and more.">
+    <title>WEB222 Final assessment done by Chungon 154928188</title>
     <style>
         header{
             background-color: darkcyan;
@@ -16,7 +16,7 @@
         .myname{
             text-align:center;
         }
-        .button {
+        .button, .submit, .clear {
           background-color: darkorange;
           border-radius: 10px;
           border: yellow;
@@ -71,10 +71,10 @@
           box-shadow: 2px 2px lightgray;
           }
 
-          .aboutmefield { grid-area: 1 / 1 / 2 / 2; width: 440px; font-weight: bold; }
-          .aboutmetext { grid-area: 2 / 1 / 5 / 2; }
-          .basicinfo { grid-area: 1 / 2 / 2 / 4; width: 440px; font-weight: bold; }
-          .agefield { grid-area: 2 / 2 / 3 / 3; }
+          .aboutmefield { grid-area: 1 / 1 / 2 / 2; width: 440px; font-weight: bold;  }
+          .aboutmetext { grid-area: 2 / 1 / 5 / 2; text-align: left;}
+          .basicinfo { grid-area: 1 / 2 / 2 / 4; width: 440px; font-weight: bold;  }
+          .agefield { grid-area: 2 / 2 / 3 / 3;}
           .emailfield { grid-area: 3 / 2 / 4 / 3; }
           .languages { grid-area: 4 / 2 / 5 / 3; }
           .agefield2 { grid-area: 2 / 3 / 3 / 4; }
@@ -115,6 +115,19 @@
           height: 30vh;
           display: block;
         }
+        input[type=text], input[type=email]{
+          width: 100%;
+        }
+        input[type=submit], input[type=reset] {
+          background-color: #62529c;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          border-radius: 5px;
+          color: #fff;
+          padding: 15px 30px;
+          text-decoration: none;
+          margin: 4px 2px;
+          cursor: pointer;
+        }
         .footer{
           font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
           background: darkcyan;
@@ -135,6 +148,19 @@
     </style>
     </head>
     <body>
+
+      <script type="text/javascript">
+
+        function yesnoCheck() {
+            if (document.getElementById('yesCheck').checked) {
+                document.getElementById('ifYes').style.display = 'block';
+            }
+            else document.getElementById('ifYes').style.display = 'none';
+        
+        }
+        
+        </script>
+
   <section class="myname">
     <header>
     <img src="profile.jpg" alt="Chungon's pic">
@@ -149,10 +175,9 @@
 
 <section class="aboutme">
   <h2>About me</h2>
-
   <div class="aboutmegrid">
-    <div class="aboutmefield">About me</div>
-    <div class="aboutmetext">My name is On. I am here to learn and it's my pleasure to meet you.</div>
+    <div class="aboutmefield">Introduction</div>
+    <div class="aboutmetext">My name is On. I am here to learn and it's my pleasure to meet you. I am interested in web design and CSS is a lot of fun. I like learning languages. Other hobbies are humanities and meme-posting. I am also running a YouTube channel these days for assignments and fun.</div>
     <div class="basicinfo">Basic information</div>
     <div class="agefield">Age:</div>
     <div class="emailfield">Email:</div>
@@ -188,11 +213,10 @@
     <form action="https://httpbin.org/post" method="post">
     <fieldset>
 	 <legend>Fill in the following:</legend>
-	    Name: <input type="text" name="yourname" id="yourname" required/><br>  
-	    Email: <input type="email" name="email" id="email" required/> <br>  
-      Address: <input type="text" name="address" id="address" required/> <br>
-      City:
-      <input type="text" list="cities" name="cities" />    
+	    <label for="yourname">Name:</label><input type="text" name="yourname" id="yourname" autocomplete="on" placeholder="Required" required/><br>  
+	    <label for="email">Email:</label><input type="email" name="email" id="email" placeholder="Required" required/> <br>  
+      <label for="address">Address:</label><input type="text" name="address" id="address" placeholder="Required" required/> <br>
+      City:<input type="text" list="cities" name="cities" placeholder="Choose one (optional)"/>  
       <datalist id="cities">	  	  
         <option label="Brampton" value="Brampton"></option>
         <option label="Hamilton" value="Hamilton"></option>
@@ -204,19 +228,31 @@
         <option label="Toronto" value="Toronto"></option>
         <option label="Windsor" value="Windsor"></option>
         <option label="Vaughan" value="Vaughan"></option>
-        <option label="Elsewhere in Ontario" value="Elsewhere in Ontario"></option>
-        <option label="Elsewhere in Canada" value="Elsewhere in Canada"></option>
-        <option label="Outside Canada" value="Outside Canada"></option>
+        <option label="Calgary" value="Calgary"></option>
+        <option label="Edmonton" value="Edmonton"></option>
+        <option label="Montreal" value="Montreal"></option>
+        <option label="Quebec" value="Quebec"></option>
+        <option label="Vancouver" value="Vancouver"></option>
+        <option label="Winnipeg" value="Winnipeg"></option>
+        <option label="Elsewhere" value="Elsewhere"></option>
       </datalist><br>
-      Postal Code: <input type="text" name="postal" id="postal" required/><br>
+
+      Postal Code:<input type="text" name="postal" id="postal" autocomplete="on" placeholder="Enter a valid Canadian postal code" 
+        pattern="^[ABCEGHJ-NPRSTVXYabceghj-nprstvxy]\d[ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][ -]?\d[ABCEGHJ-NPRSTV-Zabceghj-nprstv-z]\d$">
+
       <label for="purpose">Your purpose is:</label><br>
-      <label><input type="radio" id="askquestion" name="purpose" value="under"/>Question</label><br>
-      <label><input type="radio" id="comment" name="purpose" value="over"/>Comment</label><br>
-      <label><input type="radio" id="comment" name="purpose" value="over"/>Hiring</label><br>
+      <label><input type="radio" id="askquestion" name="purpose" value="1"/>Question</label><br>
+      <label><input type="radio" id="comment" name="purpose" value="2"/>Comment</label><br>
+      <label><input type="radio" name="purpose" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">Hiring<br>
+      <div id="ifYes" style="display:none">
+          Thank you for your consideration! Please suggest an hourly rate for me:<input type='number' id='yes' name='yes' placeholder="14.0" min="14.0"><br>
+      </div>
+
 	    <label for="message">Message:</label><br>
       <textarea name="message" id="message" placeholder="Please tell me what you think"></textarea><br>
       <br>
-      <input type='submit' value='Submit'> <input type='reset'  value='    Clear   '>
+      <input type='submit' value='Submit'>
+      <input type='reset'  value='Clear'>
     </form>
 	</fieldset></div>
 </section>

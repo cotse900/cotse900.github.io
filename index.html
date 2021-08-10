@@ -16,6 +16,20 @@
         .myname{
             text-align:center;
         }
+        .button {
+          background-color: darkorange;
+          border-radius: 10px;
+          border: yellow;
+          color: black;
+          font-weight: bold;
+          padding: 15px 32px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px;
+          cursor: pointer;
+        }
         h1 {
             box-sizing: border-box;
             text-align: center;
@@ -43,33 +57,30 @@
             margin-top:auto;
             margin-bottom:auto;
         }
-        .aboutmegrid{
+        .aboutmegrid {
           display: grid;
-          grid-template-columns: auto auto;
-          grid-gap: 15px;
-        }
-        .aboutmehead{
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(5, 1fr);
+          grid-column-gap: 20px;
+          grid-row-gap: 5px;
           padding: 20px;
           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
           font-size: 20px;
-          text-align: center;
-          background-color: darkcyan;
-          box-shadow: 2px 2px lightgray;
-        }
-        .aboutmeleft{
-          padding: 20px;
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-          font-size: 20px;
+          text-align: left;
           background-color: white;
           box-shadow: 2px 2px lightgray;
-        }
-        .aboutmemiddle{
-          padding: 20px;
-          font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-          font-size: 20px;
-          background-color: white;
-          box-shadow: 2px 2px lightgray;
-        }
+          }
+
+          .aboutmefield { grid-area: 1 / 1 / 2 / 2; width: 440px; font-weight: bold; }
+          .aboutmetext { grid-area: 2 / 1 / 5 / 2; }
+          .basicinfo { grid-area: 1 / 2 / 2 / 4; width: 440px; font-weight: bold; }
+          .agefield { grid-area: 2 / 2 / 3 / 3; }
+          .emailfield { grid-area: 3 / 2 / 4 / 3; }
+          .languages { grid-area: 4 / 2 / 5 / 3; }
+          .agefield2 { grid-area: 2 / 3 / 3 / 4; }
+          .emailfield2 { grid-area: 3 / 3 / 4 / 4; }
+          .languages2 { grid-area: 4 / 3 / 5 / 4; }
+
         .educationgrid {
           display: grid;
           grid-template-columns: auto auto;
@@ -93,6 +104,7 @@
         }
         .feedback{
           font-family: Verdana, Geneva, Tahoma, sans-serif;
+          background: lightsteelblue;
         }
         fieldset{
           border:3px solid black;
@@ -120,47 +132,44 @@
         -o-user-select: none;
         user-select: none;
         }
-
-
     </style>
     </head>
     <body>
-
-      
-
-
   <section class="myname">
     <header>
-      <br>
     <img src="profile.jpg" alt="Chungon's pic">
-    <br>
     <div class="my name">
-        <h1><p>Chungon Tse</p></h1>
-    <h3>Paralegal, burgeoning developer</h3><br>
+    <h1><p>Chungon Tse</p></h1>
+    <h3>Paralegal, burgeoning developer</h3>
+    <a href="resumetco.pdf"><input type="button" id="contactme" class="button" value="Resume"></a>
+    <a href="#feedback"><input type="button" id="resume" class="button" value="Contact me"></a>
       </div>
   </header>
 </section>
 
 <section class="aboutme">
-  <h2>About me</h2><br>
+  <h2>About me</h2>
+
   <div class="aboutmegrid">
-    <div class="aboutmehead">Career objective</div>
-    <div class="aboutmehead">Basic information</div>
-    <div class="aboutmeleft">My name is On.</div>
-    <div class="aboutmemiddle">Age:</div>
-  </div>
-
-
+    <div class="aboutmefield">About me</div>
+    <div class="aboutmetext">My name is On. I am here to learn and it's my pleasure to meet you.</div>
+    <div class="basicinfo">Basic information</div>
+    <div class="agefield">Age:</div>
+    <div class="emailfield">Email:</div>
+    <div class="languages">Languages:</div>
+    <div class="agefield2">25 every year</div>
+    <div class="emailfield2">cotse@myseneca.ca</div>
+    <div class="languages2">English, French, Cantonese, Mandarin, German</div>
+    </div>
 </section>
 
 <section class="education">
   <h2>Education</h2>    
   <div class="educationgrid">
       <div class="educationitemleft">2021-Present</div>
-      <div class="educationitemright">Diploma in Programming</p>
-        <p>Seneca College</div>
+      <div class="educationitemright">Diploma in Programming<br>Seneca College</div>
       <div class="educationitemleft">2020</div>  
-      <div class="educationitemright">Paralegal exam</div>
+      <div class="educationitemright">Paralegal license</div>
       <div class="educationitemleft">2019</div>
       <div class="educationitemright">Graduate Certificate in Paralegal<br>
         Centennial College</div>
@@ -173,16 +182,32 @@
     </div>
 </section>
 
-<section class="feedback">
+<section class="feedback" id="feedback">
   <h2>Contact me</h2>
   <div class="form1">  
     <form action="https://httpbin.org/post" method="post">
     <fieldset>
 	 <legend>Fill in the following:</legend>
-	    Name: <input type="text" name="yourname" id="youranme" required/><br>  
+	    Name: <input type="text" name="yourname" id="yourname" required/><br>  
 	    Email: <input type="email" name="email" id="email" required/> <br>  
-      Address: <input type="text" name="address" id="address"/> <br>
-      City:<br>
+      Address: <input type="text" name="address" id="address" required/> <br>
+      City:
+      <input type="text" list="cities" name="cities" />    
+      <datalist id="cities">	  	  
+        <option label="Brampton" value="Brampton"></option>
+        <option label="Hamilton" value="Hamilton"></option>
+        <option label="Kitchener" value="Kitchener"></option>
+        <option label="London" value="London"></option>
+        <option label="Markham" value="Markham"></option>
+        <option label="Mississauga" value="Mississauga"></option>
+        <option label="Ottawa" value="Ottawa"></option>
+        <option label="Toronto" value="Toronto"></option>
+        <option label="Windsor" value="Windsor"></option>
+        <option label="Vaughan" value="Vaughan"></option>
+        <option label="Elsewhere in Ontario" value="Elsewhere in Ontario"></option>
+        <option label="Elsewhere in Canada" value="Elsewhere in Canada"></option>
+        <option label="Outside Canada" value="Outside Canada"></option>
+      </datalist><br>
       Postal Code: <input type="text" name="postal" id="postal" required/><br>
       <label for="purpose">Your purpose is:</label><br>
       <label><input type="radio" id="askquestion" name="purpose" value="under"/>Question</label><br>
@@ -193,9 +218,7 @@
       <br>
       <input type='submit' value='Submit'> <input type='reset'  value='    Clear   '>
     </form>
-	</fieldset> </div>
-
-
+	</fieldset></div>
 </section>
 
   <section class="footer">

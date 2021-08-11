@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-    <meta charset="utf-8" name="Chungon's Resume" content="TCO's self-introduction, profile, and more.">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <title>WEB222 Final assessment done by Chungon 154928188</title>
     <style>
         header{
@@ -59,11 +59,11 @@
         }
         .aboutmegrid {
           display: grid;
-          grid-template-columns: repeat(5, 1fr);
-          grid-template-rows: repeat(5, 1fr);
-          grid-column-gap: 20px;
-          grid-row-gap: 5px;
-          padding: 20px;
+          grid-template-columns: 3fr 1fr 2fr;
+          grid-template-rows: repeat(4, 1fr);
+          grid-column-gap: 10px;
+          grid-row-gap: 10px;
+          padding: 10px;
           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
           font-size: 20px;
           text-align: left;
@@ -71,9 +71,9 @@
           box-shadow: 2px 2px lightgray;
           }
 
-          .aboutmefield { grid-area: 1 / 1 / 2 / 2; width: 440px; font-weight: bold;  }
+          .aboutmefield { grid-area: 1 / 1 / 2 / 2; width:max-content; font-weight: bold;  }
           .aboutmetext { grid-area: 2 / 1 / 5 / 2; text-align: left;}
-          .basicinfo { grid-area: 1 / 2 / 2 / 4; width: 440px; font-weight: bold;  }
+          .basicinfo { grid-area: 1 / 2 / 2 / 4; width:max-content; font-weight: bold;  }
           .agefield { grid-area: 2 / 2 / 3 / 3;}
           .emailfield { grid-area: 3 / 2 / 4 / 3; }
           .languages { grid-area: 4 / 2 / 5 / 3; }
@@ -110,14 +110,25 @@
           border:3px solid black;
           border-radius: 1em;
         }
+        label{
+          font-size:medium;
+        }
         textarea{
           width: 100%;
           height: 30vh;
           display: block;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          font-size:medium;
+          background-color: beige;
         }
         input[type=text], input[type=email]{
           width: 100%;
+          background-color: beige;
         }
+        input::placeholder, textarea::placeholder {
+        color: black;
+        opacity: 3;
+      }
         input[type=submit], input[type=reset] {
           background-color: #62529c;
           font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -132,6 +143,7 @@
           font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
           background: darkcyan;
           font-size:20px;
+          font-weight:bold;
           text-align: center;
         }
         html{
@@ -241,15 +253,15 @@
         pattern="^[ABCEGHJ-NPRSTVXYabceghj-nprstvxy]\d[ABCEGHJ-NPRSTV-Zabceghj-nprstv-z][ -]?\d[ABCEGHJ-NPRSTV-Zabceghj-nprstv-z]\d$">
 
       <label for="purpose">Your purpose is:</label><br>
-      <label><input type="radio" id="askquestion" name="purpose" value="1"/>Question</label><br>
-      <label><input type="radio" id="comment" name="purpose" value="2"/>Comment</label><br>
+      <label><input type="radio" id="askquestion" name="purpose" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"/>Question</label><br>
+      <label><input type="radio" id="comment" name="purpose" onclick="javascript:yesnoCheck();" name="yesno" id="noCheck"/>Comment</label><br>
       <label><input type="radio" name="purpose" onclick="javascript:yesnoCheck();" name="yesno" id="yesCheck">Hiring<br>
       <div id="ifYes" style="display:none">
-          Thank you for your consideration! Please suggest an hourly rate for me:<input type='number' id='yes' name='yes' placeholder="14.0" min="14.0"><br>
+          Thank you for your consideration! Please suggest an hourly rate for me:
+          <input type='number' id='yes' name='yes' placeholder="14.35" min="14.35" step="0.05"><br>
       </div>
-
 	    <label for="message">Message:</label><br>
-      <textarea name="message" id="message" placeholder="Please tell me what you think"></textarea><br>
+      <textarea name="message" id="message" placeholder="Tell me what you think. Thanks!"></textarea><br>
       <br>
       <input type='submit' value='Submit'>
       <input type='reset'  value='Clear'>
@@ -260,6 +272,7 @@
   <section class="footer">
   <p>This is an assignment about <abbr title="Web Programming Principles, Seneca College">WEB222</abbr>.</p>
   <p>Chungon Tse 154928188</p>
+  <p><a href="https://www.youtube.com">My Reflection Video</a></p>
   <p>Dated: <time datetime="2021-08-13">13 Aug 2021</time></p>
 
 </body>

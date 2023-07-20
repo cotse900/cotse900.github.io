@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Letter</title>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="random_styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Random Letter</h1>
+        <h1>隨機抽字母</h1>
+        <h1>Генератор випадкових букв</h1>
+        <div class="form-group">
+            <label for="alphabetSelect">EN/UA:</label>
+            <p>Note: not all letters are used for country names</p>
+            <select id="alphabetSelect">
+                <option value="en-without-qx">English Alphabet without q, x</option>
+                <option value="jyutping">Cantonese jyutping 粵拼</option>
+                <option value="uk-without-6">Ukrainian Alphabet without Ґ, Ж, Ї, Щ, Ь, Ю</option>
+                <option value="uk">Ukrainian Alphabet</option>                
+                <option value="en">A-Z</option>
+            </select>
+        </div>
+        <button onclick="startRandomizing()">Start Randomizing</button>
+        <div id="outputLetter"></div>
+    </div>
+
+    <script>
+        function startRandomizing() {
+            const alphabetSelect = document.getElementById('alphabetSelect');
+            const selectedAlphabet = alphabetSelect.value;
+            let letters;
+
+            if (selectedAlphabet === "en-without-qx") {
+                letters = 'ABCDEFGHIJKLMNOPRSTUVWYZ';
+            } else if (selectedAlphabet === "jyutping") {
+                letters = ['b','p','m','f','d','t','n','l','g/gw','k/kw','h','z','c','s','j','w','ng/ø'];
+            } else if (selectedAlphabet === "uk-without-6") {
+                letters = 'АБВГДЕЄЗИІЙКЛМНОПРСТУФХЦЧШЯ';
+            } else if (selectedAlphabet === "uk") {
+                letters = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ';
+            } else if (selectedAlphabet === "en"){
+                letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            }
+
+            const outputElement = document.getElementById('outputLetter');
+            let count = 0;
+
+            const intervalId = setInterval(() => {
+                const randomIndex = Math.floor(Math.random() * letters.length);
+                const randomLetter = letters[randomIndex];
+                outputElement.textContent = randomLetter;
+                count++;
+
+                if (count >= 20) {
+                    clearInterval(intervalId);
+                }
+            }, 20); // Change the interval time (in milliseconds) to adjust the speed of randomization
+        }
+    </script>
+</body>
+</html>

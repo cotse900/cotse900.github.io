@@ -1,0 +1,94 @@
+body {
+    background-color: #222;
+    color: #fff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 32px;
+    margin: 20px 0;
+    white-space: nowrap;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 20px;
+}
+
+select {
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+    /* Adjusting the width of the dropdown menu */
+    max-width: 100%;
+    -webkit-appearance: none; /* Remove default arrow on some browsers */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Styling the custom dropdown arrow */
+select::after {
+    content: '\25BC';
+    font-size: 12px;
+    padding: 0 4px;
+}
+
+button {
+    font-size: 20px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#outputLetter {
+    font-size: 96px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#outputLetter.uk {
+    font-style: italic;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+        white-space: normal;
+    }
+
+    select {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+
+    #outputLetter {
+        font-size: 64px;
+        padding: 16px;
+    }
+}

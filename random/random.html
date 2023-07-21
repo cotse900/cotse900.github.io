@@ -13,49 +13,64 @@
         <div class="form-group">
             <label for="alphabetSelect">EN/UA:</label>
             <p>Note: not all letters are used for country names</p>
+            <p>scroll for even more random things :P</p>
             <select id="alphabetSelect">
                 <option value="en-without-qx">English Alphabet without q, x</option>
                 <option value="jyutping">Cantonese jyutping 粵拼</option>
                 <option value="uk-without-6">Ukrainian Alphabet without Ґ, Ж, Ї, Щ, Ь, Ю</option>
                 <option value="uk">Ukrainian Alphabet</option>                
                 <option value="en">A-Z</option>
+                <option value="northern-lights">Northern Lights stations</option>
             </select>
         </div>
         <button onclick="startRandomizing()">Start Randomizing</button>
         <div id="outputLetter"></div>
+
+        <img src="https://happycoding.io/tutorials/processing/for-loops/images/letters-5.png" alt="Random Image">
     </div>
 
     <script>
         function startRandomizing() {
             const alphabetSelect = document.getElementById('alphabetSelect');
-            const selectedAlphabet = alphabetSelect.value;
-            let letters;
+            const selectedDataSet = alphabetSelect.value;
+            let items;
 
-            if (selectedAlphabet === "en-without-qx") {
-                letters = 'ABCDEFGHIJKLMNOPRSTUVWYZ';
-            } else if (selectedAlphabet === "jyutping") {
-                letters = ['b','p','m','f','d','t','n','l','g/gw','k/kw','h','z','c','s','j','w','ng/ø'];
-            } else if (selectedAlphabet === "uk-without-6") {
-                letters = 'АБВГДЕЄЗИІЙКЛМНОПРСТУФХЦЧШЯ';
-            } else if (selectedAlphabet === "uk") {
-                letters = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ';
-            } else if (selectedAlphabet === "en"){
-                letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            if (selectedDataSet === "en-without-qx") {
+                items = 'ABCDEFGHIJKLMNOPRSTUVWYZ';
+            } else if (selectedDataSet === "jyutping") {
+                items = ['b','p','m','f','d','t','n','l','g/gw','k/kw','h','z','c','s','j','w','ng/ø'];
+            } else if (selectedDataSet === "uk-without-6") {
+                items = 'АБВГДЕЄЗИІЙКЛМНОПРСТУФХЦЧШЯ';
+            } else if (selectedDataSet === "uk") {
+                items = 'АБВГҐДЕЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЬЮЯ';
+            } else if (selectedDataSet === "en") {
+                items = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            } else if (selectedDataSet === "northern-lights") {
+                items = ['Gdańsk', 'Klaipėda', 'Riga',
+            'Tallinn', 'Kuressaare',
+            'Århus', 'Kobenhavn', 'Ålborg',
+            'Karlskrona', 'Norrköping', 'Göteborg', 'Karlstad', 'Stockholm', 'Visby', 'Östersund', 'Sundsvall', 
+            'Umeå', 'Sweden 1', 'Boden', 'Kiruna', 'Sweden 2',
+            'Kristiansand', 'Oslo', 'Lillehammer', 'Bergen', 'Stavanger', 'Åndalsnes', 'Trondheim', 'Mo i Rana',
+            'Narvik', 'Tromsø', 'Honningsvåg', 'Kirkenes',
+            'Helsinki', 'Turku', 'Lahti', 'Tampere', 'Imatra', 'Vaasa', 'Kuopio', 'Lieksa', 'Kajaani', 'Oulu',
+            'Tornio', 'Rovaniemi', 'Kemijärvi',
+            'Kostomuksha', 'Apatity', 'Murmansk', 'Russia 1']
             }
 
             const outputElement = document.getElementById('outputLetter');
             let count = 0;
 
             const intervalId = setInterval(() => {
-                const randomIndex = Math.floor(Math.random() * letters.length);
-                const randomLetter = letters[randomIndex];
+                const randomIndex = Math.floor(Math.random() * items.length);
+                const randomLetter = items[randomIndex];
                 outputElement.textContent = randomLetter;
                 count++;
 
-                if (count >= 20) {
+                if (count >= 25) {
                     clearInterval(intervalId);
                 }
-            }, 20); // Change the interval time (in milliseconds) to adjust the speed of randomization
+            }, 25); // Change the interval time (in milliseconds) to adjust the speed of randomization
         }
     </script>
 </body>

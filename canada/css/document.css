@@ -56,17 +56,21 @@ h1 {
 }
 
 body.light-mode {
-  background-color: #f0f0f0; /* Light mode background color */
-  color: #333; /* Light mode text color */
+  background-color: #f0f0f0;
+  color: #333;
 }
 
-/* CSS for Dark Mode */
 body.dark-mode {
-  background-color: #333; /* Dark mode background color */
-  color: #f0f0f0; /* Dark mode text color */
+  background-color: #333;
+  color: #f0f0f0;
 }
 
 .dark-mode #total-marks {
-  background-color: #333; /* Darker background color for dark mode */
-  color: #fff; /* White text color for dark mode */
+  background-color: #333;
+  color: #fff;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
 }

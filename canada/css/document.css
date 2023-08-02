@@ -16,7 +16,10 @@
 
 body,
 #data-level-select,
-#toggle-mode-button {
+#data-level-select-en,
+#data-level-select-fr,
+#toggle-mode-button,
+#toggle-language-button {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   margin: 0;
@@ -44,7 +47,8 @@ h1 {
 #total-marks,
 #data-level-select,
 #toggle-mode-button,
-#reset-button {
+#reset-button,
+#toggle-language-button {
   font-size: 20px;
   padding: 10px;
   border: 1px solid #ccc;

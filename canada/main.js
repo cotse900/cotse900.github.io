@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateTotalMarksDisplay() {
     const totalMarksElement = document.getElementById("total-marks");
-    totalMarksElement.textContent = `Total Marks: ${totalMarks}`;
+    totalMarksElement.textContent = `${totalMarks}`;
   }
 
   const resetButton = document.getElementById("reset-button");
@@ -69,6 +69,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Update the total marks display
     updateTotalMarksDisplay();
+  });
+
+  //languages
+
+  function updateLanguage(lang) {
+    const elementsWithLangAttribute = document.querySelectorAll(
+      "[data-lang-en], [data-lang-fr], [data-lang-zh]",
+    );
+    const toggleLanguageButton = document.getElementById(
+      "toggle-language-button",
+    );
+
+    elementsWithLangAttribute.forEach((element) => {
+      const key = element.getAttribute(`data-lang-${lang}`);
+      element.textContent = key;
+    });
+  }
+
+  // Add event listener to the toggle language button
+  const toggleLanguageButton = document.getElementById(
+    "toggle-language-button",
+  );
+  toggleLanguageButton.addEventListener("click", function () {
+    // Toggle the language between English, French, and Cantonese
+    const currentLanguage = document.documentElement.lang || "en"; // Default to English if lang attribute not set
+    let newLanguage;
+    switch (currentLanguage) {
+      case "en":
+        newLanguage = "fr";
+        break;
+      case "fr":
+        newLanguage = "zh";
+        break;
+      case "zh":
+        newLanguage = "en";
+        break;
+      default:
+        newLanguage = "en";
+        break;
+    }
+    document.documentElement.lang = newLanguage; // Set the lang attribute for the HTML element
+    updateLanguage(newLanguage);
   });
 });
 
@@ -92,17 +134,21 @@ function getFillColorByDataLevel(dataLevel) {
 // Function to toggle between light and dark mode
 function toggleDarkMode() {
   const body = document.body;
+  const toggleModeButton = document.getElementById("toggle-mode-button");
+
+  // Toggle the dark-mode class on the body
   body.classList.toggle("dark-mode");
 
-  // Toggle the button text based on the current mode
-  const toggleModeButton = document.getElementById("toggle-mode-button");
-  if (body.classList.contains("dark-mode")) {
-    toggleModeButton.textContent = "Light";
-  } else {
-    toggleModeButton.textContent = "Dark";
-  }
+  // Get the current language from the lang attribute of the HTML element
+  const currentLanguage = document.documentElement.lang || "en"; // Default to English if lang attribute not set
 }
 
 // Add event listener to the button
 const toggleModeButton = document.getElementById("toggle-mode-button");
 toggleModeButton.addEventListener("click", toggleDarkMode);
+
+// Initial language setup (if lang attribute is set)
+const initialLanguage = document.documentElement.lang;
+if (initialLanguage) {
+  updateLanguage(initialLanguage);
+}

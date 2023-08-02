@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,21 +17,73 @@
   </head>
   <body class="light-mode">
     <div class="container">
-      <h1>Map of Canada</h1>
+      <!-- Use JavaScript to handle translations -->
+      <h1
+        data-lang-en="Map of Canada"
+        data-lang-fr="Carte du Canada"
+        data-lang-zh="加拿大地圖"
+      >
+        Map of Canada
+      </h1>
+      <button id="toggle-language-button">EN/FR/粵</button>
       <!-- Add a drop-down menu or radio buttons to select data level -->
       <div class="center">
-        <p id="total-marks">Total Marks:</p>
-        <select id="data-level-select">
-          <option value="data_level_3">Lived here</option>
-          <option value="data_level_2">Visited here</option>
-          <option value="data_level_1">Stopped here</option>
-          <option value="data_level_0">Never been here</option>
+        <p id="total-marks"></p>
+        <select id="data-level-select" aria-label="options">
+          <!-- Use JavaScript to handle translations -->
+          <option
+            value="data_level_3"
+            data-lang-en="Lived here"
+            data-lang-fr="J'ai vécu(e) ici"
+            data-lang-zh="住過"
+          >
+            Lived here
+          </option>
+          <option
+            value="data_level_2"
+            data-lang-en="Visited here"
+            data-lang-fr="J'ai visité(e) ici"
+            data-lang-zh="嚟過"
+          >
+            Visited here
+          </option>
+          <option
+            value="data_level_1"
+            data-lang-en="Stopped here"
+            data-lang-fr="Je me suis arrêté(e) ici"
+            data-lang-zh="短留過"
+          >
+            Stopped here
+          </option>
+          <option
+            value="data_level_0"
+            data-lang-en="Never been here"
+            data-lang-fr="Jamais été(e) ici"
+            data-lang-zh="未嚟過"
+          >
+            Never been here
+          </option>
         </select>
+        <button
+          id="toggle-mode-button"
+          data-lang-en="Toggle Dark Mode"
+          data-lang-fr="Basculer en mode sombre"
+          data-lang-zh="切換暗模式"
+        >
+          Toggle Dark Mode
+        </button>
+
+        <button
+          id="reset-button"
+          data-lang-en="Reset"
+          data-lang-fr="Réinitialiser"
+          data-lang-zh="再揀過"
+        >
+          Reset
+        </button>
       </div>
-      <button id="toggle-mode-button">Dark</button>
-      <button id="reset-button">Reset</button>
     </div>
-    
+
     <section>
       <!-- https://commons.wikimedia.org/wiki/File:Canada_location_map_2.svg -->
       <!-- https://upload.wikimedia.org/wikipedia/commons/7/77/Canada_location_map_2.svg -->
@@ -284,7 +340,10 @@
                     id="etolin"
                     d="m-21349-2512v59l-71 77-28-9-31-9-7 8 21 4 21 25 50-21 5 53 37 22 11 42 12 86-44 15-18-11 4-18-20-3-8 12 14 36-26-13-25 57-42 43-80-27-2-52-13-1-6-25 33-29 29 7 18-15-3-5-17 9-26-16-5-31 30-14 6-19-23 6-38-26-3-27-52 21 22-114 17-21 9 31 12-54 21-2-12-21 40-8v12l36 13 51-45h19l10-17 17-4 8 12z"
                   />
-                  <path id="forrester" d="m-22850-1526 12 1-18 48-25 22 2-27z" />
+                  <path
+                    id="forrester"
+                    d="m-22850-1526 12 1-18 48-25 22 2-27z"
+                  />
                   <path
                     id="gravina"
                     d="m-21737-1163 1-86 47-121 40-70 21 17 20-53 45 202-21 7-10-41-49 79-20-27-17 9 3 34z"
@@ -297,7 +356,10 @@
                     id="heceta"
                     d="m-22269-2454-5 48 17-33 20 2 21 54-14 14 50 31 9 24 28-15 11 20-40 25-52-15-23-57-12 1-6 42-13 23-30-3-32-68 2-72h31z"
                   />
-                  <path id="hinchinbrook" d="m-24550-10915 49 34-36 59-13-10z" />
+                  <path
+                    id="hinchinbrook"
+                    d="m-24550-10915 49 34-36 59-13-10z"
+                  />
                   <path
                     id="kayak"
                     d="m-24423-9808 63-31 202-10 51 18 5 17-153-8z"
@@ -432,7 +494,10 @@
               </g>
               <g id="i-CA">
                 <g id="i-CA-BC">
-                  <path id="anger" d="m-21681 917 22 17-9 21-48 37-14-6-20-65z" />
+                  <path
+                    id="anger"
+                    d="m-21681 917 22 17-9 21-48 37-14-6-20-65z"
+                  />
                   <path
                     id="anvil"
                     d="m-19782 6946 7 2 10 17-7 28-17 6-7-21 3-13 9-4z"
@@ -560,7 +625,10 @@
                     id="e_thurlow"
                     d="m-20741 5394h96l24 35-23 29-26 12-14-16-2 23-14 10-57-6-42-60 7-7 42 6z"
                   />
-                  <path id="eden" d="m-21297 4664 23 28-2 8-26-1-24-11-10-19z" />
+                  <path
+                    id="eden"
+                    d="m-21297 4664 23 28-2 8-26-1-24-11-10-19z"
+                  />
                   <path
                     id="farrant"
                     d="m-21479 1349-50-18 34-14-16-67 50-24 15 67zm5 29-64 29 21-51z"
@@ -951,7 +1019,10 @@
                     id="albany"
                     d="m9045 7452 50 45-3 5-43-4-52 10-42 18-32-4-19-9 68-35 21-21 22-8z"
                   />
-                  <path id="olimisk" d="m10455 8383 5-12 21 1 29 44-4 3-15-2z" />
+                  <path
+                    id="olimisk"
+                    d="m10455 8383 5-12 21 1 29 44-4 3-15-2z"
+                  />
                   <path
                     id="partridge"
                     d="m4509 4072-6-20 9-25 32-19 36 16 5 19-52 18-17 9-7 19-4-3z"
@@ -1055,7 +1126,10 @@
                     id="lameque"
                     d="m22035 7930 10-32 14 34v52l-5 54-9 19-3 22-13 27-20-20-16 11-14-5-2-7 29-40-22-9-7 12-7 16-7-3-1-17 6-18-9-3-3 11-9 6-16-50 28-51 44-12 5 12z"
                   />
-                  <path id="machias_seal" d="m21908 12206 1-2 1 2 1 2-1 2-2-1z" />
+                  <path
+                    id="machias_seal"
+                    d="m21908 12206 1-2 1 2 1 2-1 2-2-1z"
+                  />
                   <path
                     id="miscou"
                     d="m21961 7769 26 1 50 58-45 76-13 12-19-20-3-22 9-51-18-36z"
@@ -1244,7 +1318,10 @@
                     id="hillsbury"
                     d="m19244-1494 19 14-3 10-79 31-11-5-3-14 2-9 11 1 17-8 22-6 14-12z"
                   />
-                  <path id="huntingdon" d="m23225-358-35-49 111-56-6 48-34 47z" />
+                  <path
+                    id="huntingdon"
+                    d="m23225-358-35-49 111-56-6 48-34 47z"
+                  />
                   <path
                     id="iglusuaktalialuk"
                     d="m18646-2143 15-12 14 5 20-2 8-8 14 10-6 7 21 3 2-6 11 20-2 4-14-2 1 22 9-5 1 17h-24l-21 23-34-13-16-40z"
@@ -1549,7 +1626,10 @@
                     id="bjarnason"
                     d="m-20-22702 29 28 2 54-45 19-86-52-27 7-59-26 36-29z"
                   />
-                  <path id="bradford" d="m-1784-17002 69 10-31 26-40 3-11-19z" />
+                  <path
+                    id="bradford"
+                    d="m-1784-17002 69 10-31 26-40 3-11-19z"
+                  />
                   <path
                     id="bray"
                     d="m6892-11200 37 28 7 78-58 135 29 51-67 66-75-12-67-98-7-96-36-71 84-68 75 37z"
@@ -1669,7 +1749,10 @@
                     id="edmund_walker"
                     d="m-2281-18875 43 5 19 28-8 24-66 43-49-18 20-57z"
                   />
-                  <path id="elder" d="m4583-11117-4-25 61 7 44 38 12 37-55-10z" />
+                  <path
+                    id="elder"
+                    d="m4583-11117-4-25 61 7 44 38 12 37-55-10z"
+                  />
                   <path
                     id="ellef_ringnes"
                     d="m-1228-20598 58-36 15 75 28 11 55 78-49 64 11 12 39-16 15 16 5 42 22-18 30 32-39 39 19 27-25 50-56 45 27 42-16 117 39-8 24 27 13 90 27 14 52 136 29 15-50 99 1 73 17 13-49 63-86 24-66-12-10 35-21 9-3-26-22-4-12-23-30 11-59-60-24-8 4-34-51-146 11-45 17-5-1-29-17-3-9-37-19-21 2-54-14-11-25 29-31-8-26-45 9-15-162-90-98 53-45-42-6-42 51-61-27-18-36 15-49-16-188 81-9 29-26 7-18-24-71-19-48-84-42-138 6-63 57-74 90 14 40 65 142 40 26-32-10-24 30-64-139-24 49-45 70 11 10-44 47-46-24-42-42 9-35 35-9-12 31-55-37-13-1 33-35 19-43-24 8-29 91-120-45-51 2-31-35-3-8 38-23-16-59 116-41 37-49 9-7-28 100-175 5-53-47-33-43 34-63 2-40-31 23-163 70-122-13-10 16-36 48 42 268-41 40 17 61 89 27-10 37 33 69 256-24 88-32 30 15 20 19-20 12 12-14 71 21 7 37-71 7-86 47-8 43-51 39-3 44 34 72 126 20-25 35 53-43 70-27 77 37 6 19 47 26-41z"
@@ -1698,7 +1781,10 @@
                     id="gillies"
                     d="m10852 2034-15-45 18 8 9 68 27 64-13 47v-42l-15-4z"
                   />
-                  <path id="gilmour" d="m8032-758 37-65 70 23-29 70-44 43h-39z" />
+                  <path
+                    id="gilmour"
+                    d="m8032-758 37-65 70 23-29 70-44 43h-39z"
+                  />
                   <path
                     id="graham1"
                     d="m905-19208 78-82 93 33 26-14 54 27-4 23 42 21 62 67 22 38 14 123 21-3v48l-13 10-42 86-53 44h-68l-4-24-30-6-129-92-50-74z"
@@ -1832,7 +1918,10 @@
                     id="mansel"
                     d="m7601-3497 43-46 90 30 1 23 120 90-11 24 23 47-11 71 9 47-17 125-11 16 15 22 6 57-26 78 15 23-13 96-19 15-10 43 10 25-3 26-36 45-35 10-39-37-67-97-57-23-12-40-46 16-28-30 8-17-30-8-29-72-19-109-6-136 23-97 31-52 15-107 48-48z"
                   />
-                  <path id="marble" d="m1859-2951-4-12 44-18 72 20 41 29-56 5z" />
+                  <path
+                    id="marble"
+                    d="m1859-2951-4-12 44-18 72 20 41 29-56 5z"
+                  />
                   <path
                     id="marc"
                     d="m-2388-17442 131 8 5 29-74 23-43-10-21-23z"
@@ -2038,7 +2127,10 @@
                     id="unnamed4"
                     d="m10113-11660 6-21 44 5 37-13 64-11 67 6 39-8 65-4 3 13-65 31-84-11-25 6-88-1-43 17z"
                   />
-                  <path id="unnamed6" d="m-1577-19914 40-94 29 55-1 38-15 23z" />
+                  <path
+                    id="unnamed6"
+                    d="m-1577-19914 40-94 29 55-1 38-15 23z"
+                  />
                   <path
                     id="vanier"
                     d="m-2030-17888 20 29 2 45 25 53-23 20 9 40-42 40-98 39-101 22-3-10-138-10-27-16 44-2-127-51-20-46 1-39 58-68 61 5 264-57z"
@@ -2573,6 +2665,7 @@
           </g>
         </svg>
       </div>
+      <div>Last edited: Aug 2023</div>
     </section>
     <script src="main.js"></script>
   </body>

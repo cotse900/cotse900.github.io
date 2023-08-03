@@ -1,0 +1,72 @@
+[data-level="data_level_3"] {
+  fill: #03406D; /* Visited Here */
+}
+
+[data-level="data_level_2"] {
+  fill: #196F92; /* Stopped Here */
+}
+
+[data-level="data_level_1"] {
+  fill: #69B3BB; /* Passed Here */
+}
+
+[data-level="data_level_0"] {
+  fill: lightblue; /* Never Been Here */
+}
+
+body,
+#data-level-select,
+#toggle-mode-button {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#total-marks,
+#data-level-select,
+#toggle-mode-button,
+#reset-button {
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #f0f0f0;
+}
+
+body.light-mode {
+  background-color: #f0f0f0; /* Light mode background color */
+  color: #333; /* Light mode text color */
+}
+
+/* CSS for Dark Mode */
+body.dark-mode {
+  background-color: #555; /* Dark mode background color */
+  color: #f0f0f0; /* Dark mode text color */
+}
+
+.dark-mode #total-marks {
+  background-color: #555; /* Darker background color for dark mode */
+  color: #fff; /* White text color for dark mode */
+}

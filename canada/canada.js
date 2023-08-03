@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   toggleLanguageButton.addEventListener("click", function () {
     // Toggle the language between English, French, and Cantonese
-    const currentLanguage = document.documentElement.lang || "en"; // Default to English if lang attribute not set
+    const currentLanguage = document.documentElement.lang || "zh";
     let newLanguage;
     switch (currentLanguage) {
       case "en":
@@ -140,7 +140,7 @@ function toggleDarkMode() {
   body.classList.toggle("dark-mode");
 
   // Get the current language from the lang attribute of the HTML element
-  const currentLanguage = document.documentElement.lang || "en"; // Default to English if lang attribute not set
+  const currentLanguage = document.documentElement.lang || "zh";
 }
 
 // Add event listener to the button

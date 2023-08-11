@@ -14,6 +14,10 @@
   fill: #fefee9; /* Never Been Here */
 }
 
+button {
+  min-width: 100px;
+}
+
 body,
 #data-level-select,
 #data-level-select-en,

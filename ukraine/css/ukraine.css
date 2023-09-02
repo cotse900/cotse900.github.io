@@ -1,0 +1,68 @@
+#ukraine-map {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: hidden;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: gray;
+  color: #ffffff;
+}
+
+.region.selected {
+  fill: white;
+  fill-opacity: 1;
+}
+
+#region-name {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+}
+
+#toggle-mode-button, #paint-regions-button, #random-button, #reset-button {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+#paint-blue-button,
+#paint-yellow-button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+#toggle-mode-button {
+  background-color: #000000;
+  color: white;
+}
+
+#paint-blue-button, #paint-regions-button {
+  width: 180px;
+  background-color: #0056B9;
+  color: #FFD800;
+}
+
+#paint-yellow-button, #random-button {
+  width: 180px;
+  background-color: #FFD800;
+  color: #0056B9;
+}
+
+#region-name {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  display: none;
+}
